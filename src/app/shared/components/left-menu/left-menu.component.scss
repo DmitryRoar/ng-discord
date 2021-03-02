@@ -1,54 +1,38 @@
 @import "~src/assets/styles/var";
 
 .wrap {
- display: flex;
- width: 100vw;
- height: calc(100vh - #{$header-height});
+  display: inline-flex;
+  overflow-y: auto;
+  overflow-x: hidden;
+  background: $main-color;
+  height: calc(100vh - #{$header-height});
+  flex-direction: column;
+  &::-webkit-scrollbar {
+    display: none
+  }
 }
 
-.left_menu {
+.menu {
   width: 70px;
-  height: calc(100vh - #{$header-height});
-  background: $main-color;
   display: flex;
   flex-direction: column;
+  align-items: center;
 }
 
-.left_server_menu {
-  display: flex;
-  justify-content: center;
-  justify-items: flex-start;
-  margin-bottom: 8px;
-}
-
-//.main_server, .main_server img {
-//  width: 48px;
-//  height: 48px;
-//  display: flex;
-//  justify-content: center;
-//  align-items: center;
-//  border-radius: 20px;
-//  transition: .25s ease;
-//  background: $bckg-logo-color;
-//  &:hover {
-//    border-radius: 15px;
-//    background: $logo-color;
-//  }
-//}
-
-.main_server {
-  width: 48px;
-  height: 48px;
+.server {
+  width: $server-width;
+  height: $server-height;
   display: flex;
   justify-content: center;
   align-items: center;
   border-radius: 20px;
   transition: .25s ease;
+  margin-bottom: 8px;
   background: $bckg-logo-color;
 
   img {
     flex: 1;
-    height: 48px;
+    height: $server-height;
   }
 
   a {
@@ -62,22 +46,22 @@
       background: $logo-color;
     }
   }
+
+  &.special {
+    &:hover {
+      background: $logo-hover-color;
+    }
+
+    &:hover .server-special {
+      color: #fff;
+    }
+  }
 }
 
-.main_server_green {
-  &:hover {
-    background: $logo-hover-color;
-  }
-  &:hover .left_server_green{
-    color: #fff;
-  }
-}
-
-.hr_server {
+hr {
   height: 2px;
   width: 32px;
   border-radius: 1px;
   background: $hr-color;
   margin: 0 auto 8px auto;
 }
-
