@@ -28,7 +28,7 @@
   border-radius: 20px;
   transition: .25s ease;
   margin-bottom: 8px;
-  background: $bckg-logo-color;
+  background: $default-color;
 
   img {
     flex: 1;
@@ -49,7 +49,7 @@
 
   &.special {
     &:hover {
-      background: $logo-hover-color;
+      background: $special-green-color;
     }
 
     &:hover .server-special {
@@ -64,4 +64,30 @@ hr {
   border-radius: 1px;
   background: $hr-color;
   margin: 0 auto 8px auto;
+}
+
+.server-special {
+  color: $special-green-color
+}
+
+.active {
+  .server {
+    border-radius: 15px;
+
+    &.special {
+      background: $special-green-color;
+    }
+
+    &.logo {
+      background: $logo-color;
+    }
+
+    &.default {
+      background: $default-color;
+    }
+
+    svg {
+      color: #fff;
+    }
+  }
 }

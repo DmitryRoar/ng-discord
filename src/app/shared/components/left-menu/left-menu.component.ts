@@ -18,4 +18,7 @@ export class LeftMenuComponent implements OnInit {
     this.servers = this.serverService.getAll()
   }
 
+  createServer() {
+
+  }
 }
