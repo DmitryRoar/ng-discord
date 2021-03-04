@@ -10,6 +10,10 @@
   &::-webkit-scrollbar {
     display: none
   }
+
+  button {
+    background: none;
+  }
 }
 
 .menu {
@@ -20,19 +24,20 @@
 }
 
 .server {
-  width: $server-width;
-  height: $server-height;
+  width: $icon-width;
+  height: $icon-height;
   display: flex;
   justify-content: center;
   align-items: center;
   border-radius: 20px;
-  transition: .25s ease;
+  transition: $server-transition;
   margin-bottom: 8px;
   background: $default-color;
 
   img {
     flex: 1;
-    height: $server-height;
+    height: $icon-height;
+    transition: $server-transition;
   }
 
   a {
@@ -41,6 +46,12 @@
 
   &:hover {
     border-radius: 15px;
+
+    img {
+      transition: $server-transition;
+      border-left: 1px solid red;
+      border-radius: 2px;
+    }
 
     &.logo {
       background: $logo-color;
@@ -73,6 +84,12 @@ hr {
 .active {
   .server {
     border-radius: 15px;
+
+    img {
+      transition: $server-transition;
+      border-left: 1px solid red;
+      border-radius: 4px;
+    }
 
     &.special {
       background: $special-green-color;

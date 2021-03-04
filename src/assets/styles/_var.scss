@@ -3,10 +3,19 @@ $logo-color: #7e82d6;
 $default-color: #37393f;
 $special-green-color: #74b683;
 $hr-color: #2e2f32;
+$desk-color: #4f5660;
+
+$icon-height: 48px;
+$icon-width: 48px;
 
 // header
 $header-height: 22px;
 
-// sever
-$server-height: 48px;
-$server-width: 48px;
+// server
+$server-transition: 0.25 ;
+
+// modal
+$modal-margin-top: 8px;
+$modal-border-color: #ebebeb;
+$modal-footer-background: #f6f6f7;
+$modal-join-btn-background: #747f8d;
