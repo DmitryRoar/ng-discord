@@ -18,7 +18,8 @@ export class LeftMenuComponent implements OnInit {
   constructor(
     private resolver: ComponentFactoryResolver,
     private readonly serverService: ServerService
-  ) {}
+  ) {
+  }
 
   ngOnInit(): void {
     this.servers = this.serverService.getAll()

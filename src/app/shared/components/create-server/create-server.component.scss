@@ -6,17 +6,20 @@
   right: 0;
   left: 0;
   bottom: 0;
-  background: rgba(0, 0, 0, .8);
+  background: rgba(0, 0, 0, .9);
 }
 
 .modal {
+  display: flex;
+  flex-direction: column;
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   background: #fff;
   border-radius: 4px;
-  height: 400px;
+  width: 440px;
+  height: 550px;
 }
 
 .header {
@@ -43,9 +46,10 @@
   padding: 0 16px 15px 16px;
   margin-top: $modal-margin-top;
   width: 100%;
+  flex-grow: 1;
 }
 
-.temp {
+.choice {
   padding: 0 16px;
   display: flex;
   justify-content: space-between;
@@ -53,7 +57,7 @@
   border: 1px solid $modal-border-color;
   border-radius: 8px;
 
-  .temp2 {
+  &__text {
     display: flex;
     align-items: center;
 
@@ -94,5 +98,16 @@
       color: #fff;
       border-radius: 4px;
     }
+  }
+}
+
+.cross {
+  position: absolute;
+  right: 16px;
+
+  button {
+    background: none;
+    font-size: 35px;
+    color: $desk-color;
   }
 }

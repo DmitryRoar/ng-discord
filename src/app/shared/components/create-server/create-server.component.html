@@ -1,38 +1,40 @@
-<div @modal>
-  <div class="backdrop" (click)="onClose()"></div>
+<div class="backdrop" (click)="onClose()"></div>
 
-  <div class="modal">
-    <div class="header">
-      <div class="title">
-        <h1>Create a server</h1>
-        <p>
-          Your server is where you and your friends hang out.
-          Make yours and start talking.
-        </p>
-      </div>
+<div class="modal" @modal>
+  <div class="cross">
+    <button (click)="onClose()">&times;</button>
+  </div>
 
-
+  <div class="header">
+    <div class="title">
+      <h1>Create a server</h1>
+      <p>
+        Your server is where you and your friends hang out.
+        Make yours and start talking.
+      </p>
     </div>
 
-    <div class="content">
-      <div class="list">
-        <div class="list__choice">
-          <div class="temp">
-            <div class="temp2">
-              <img src="../../../../assets/img/create-my-own.svg" alt="">
-              <span>Create my own</span>
-            </div>
-            <img src="../../../../assets/img/arrow-next.svg">
+
+  </div>
+
+  <div class="content">
+    <div class="list">
+      <div class="list__choice">
+        <div class="choice">
+          <div class="choice__text">
+            <img src="../../../../assets/img/create-my-own.svg" alt="">
+            <span>Create my own</span>
           </div>
+          <img src="../../../../assets/img/arrow-next.svg">
         </div>
       </div>
     </div>
+  </div>
 
-    <div class="footer">
-      <div class="footer__content">
-        <p>Have an invite already?</p>
-        <button>Join a Server</button>
-      </div>
+  <div class="footer">
+    <div class="footer__content">
+      <p>Have an invite already?</p>
+      <button>Join a Server</button>
     </div>
   </div>
 </div>

@@ -11,11 +11,9 @@ import {modalAnimations} from '../../animations/modal.animation'
 export class CreateServerComponent implements OnInit {
   @Output() close = new EventEmitter<void>()
 
-  constructor() {
-  }
+  constructor() {}
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 
   onClose() {
     this.close.emit()

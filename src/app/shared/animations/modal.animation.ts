@@ -6,16 +6,29 @@ import {
   trigger
 } from '@angular/animations'
 
-const timing = 300
+const timing = 240
+const height = 200
 
 export const modalAnimations: AnimationTriggerMetadata =
   trigger('modal', [
     transition(':enter', [
-      style({opacity: 0}),
-      animate(timing, style({opacity: 1}))
+      style({
+        height,
+        transform: 'translate(-50%,-50%) scale(0)'
+      }),
+      animate(timing, style({
+        height: '*',
+        transform: '* scale(1)'
+      }))
     ]),
     transition(':leave', [
-      style({opacity: 1}),
-      animate(timing, style({opacity: 0}))
+      style({
+        height: '*',
+        transform: '* scale(1)'
+      }),
+      animate(timing, style({
+        height,
+        transform: '* scale(0)'
+      }))
     ])
   ])
