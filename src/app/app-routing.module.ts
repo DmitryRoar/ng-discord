@@ -1,5 +1,5 @@
 import {NgModule} from '@angular/core'
-import {RouterModule, Routes} from '@angular/router'
+import {PreloadAllModules, RouterModule, Routes} from '@angular/router'
 
 import {MainLayoutComponent} from './shared/components/main-layout/main-layout.component'
 
@@ -8,6 +8,8 @@ import {HomePageComponent} from './home-page/home-page.component'
 import {PublicServerPageComponent} from './public-server-page/public-server-page.component'
 import {ServerPageComponent} from './server-page/server-page.component'
 
+import {ServerGuard} from './shared/guards/server.guard'
+
 const routes: Routes = [
   {
     path: '',
@@ -15,7 +17,7 @@ const routes: Routes = [
     children: [
       {path: '', component: HomePageComponent},
       {path: 'public-server', component: PublicServerPageComponent},
-      {path: ':name', component: ServerPageComponent}
+      {path: 'server/:name', component: ServerPageComponent, canActivate: [ServerGuard]}
     ]
   },
   {path: 'error', component: ErrorPageComponent},
@@ -23,7 +25,9 @@ const routes: Routes = [
 ]
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes, {})],
+  imports: [RouterModule.forRoot(routes, {
+    preloadingStrategy: PreloadAllModules
+  })],
   exports: [RouterModule]
 })
 export class AppRoutingModule {
