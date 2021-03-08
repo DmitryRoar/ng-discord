@@ -5,8 +5,9 @@
   overflow-y: auto;
   overflow-x: hidden;
   background: $main-color;
-  height: calc(100vh - #{$header-height});
+  height: $content-height;
   flex-direction: column;
+  width: $server-width;
   &::-webkit-scrollbar {
     display: none
   }

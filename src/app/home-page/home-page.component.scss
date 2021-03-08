@@ -1,0 +1,271 @@
+@import "~src/assets/styles/var";
+
+.wrap {
+  display: flex;
+}
+
+.content-wrap {
+  width: $content-weight;
+}
+
+.channel-wrap {
+  width: $channel-width;
+  height: $content-height;
+  background: $dialog-bckg-color;
+}
+
+.header {
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+
+  &__btn {
+    background: $dialog-header-bckg-color;
+    color: $dialog-header-text-color;
+    padding: 1px 6px;
+    font-size: 14px;
+    border-radius: 4px;
+    width: 100%;
+    height: 28px;
+    text-overflow: ellipsis;
+    text-align: left;
+    overflow: hidden;
+    white-space: nowrap;
+    font-weight: 500;
+  }
+}
+
+hr {
+  height: 1px;
+  background: $hr-color;
+}
+
+.mode {
+  margin: 8px;
+
+  &-content {
+    display: flex;
+    align-items: center;
+    height: 42px;
+    width: 224px;
+    border-radius: 4px;
+    padding: 8px;
+
+    span {
+      margin-left: 18px;
+      color: $dialog-text;
+    }
+
+    svg {
+      color: $dialog-text;
+      width: 24px;
+      height: 24px;
+    }
+
+    &:hover {
+      background: $dialog-hover;
+      color: #fff;
+
+      &:hover span, svg {
+        color: $dialog-hover-text;
+      }
+    }
+  }
+}
+
+.direct-header {
+  padding: 18px 8px 4px 18px;
+  display: flex;
+  align-items: center;
+  height: 40px;
+
+  span {
+    cursor: default;
+  }
+
+  svg {
+    width: 16px;
+    height: 16px;
+    color: $dialog-special-btn;
+  }
+
+  &__headline {
+    text-transform: uppercase;
+    color: $dialog-text;
+    width: 188px;
+    font-size: 11px;
+    font-weight: 600;
+    line-height: normal;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+  }
+
+  &:hover span {
+    color: $dialog-hover-text;
+  }
+}
+
+
+
+.direct {
+  display: flex;
+  align-items: center;
+  margin: 2px 8px 0 8px;
+  border-radius: 4px;
+  padding-right: 11px;
+  height: 42px;
+  width: 224px;
+
+  &__name {
+    color: $dialog-text;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    font-size: 15px;
+    font-weight: 500;
+    width: 156px;
+  }
+
+  &__avatar {
+    height: 32px;
+    border-radius: 50%;
+  }
+
+  &:hover, &__active {
+    background: $dialog-hover;
+  }
+
+  &:hover &__name, &__active &__name {
+    color: $dialog-hover-text;
+  }
+
+  &:hover .delete_msg {
+    display: block;
+  }
+
+  &:hover .left_people_avatar {
+    opacity: 1;
+  }
+}
+
+// --------------------
+
+.delete_msg {
+  display: none;
+  color: $dialog-special-btn;
+  width: 16px;
+  height: 16px;
+}
+
+.left_right_footer {
+  background: $left_right_footer;
+  // position: fixed;
+  width: 240px;
+  height: 202px;
+}
+
+.left_right_connected {
+  height: 89px;
+  padding: 8px;
+}
+
+.left_right_person_status {
+  height: 52px;
+}
+
+.status_connected_200 {
+  width: 16px;
+  height: 16px;
+  margin-right: 5px;
+}
+
+.left_status_span {
+  text-transform: capitalize;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.left_horizont_menu {
+  height: 32px;
+  width: 224px;
+  display: flex;
+  align-items: center;
+}
+
+.left_status {
+  width: 150px;
+  height: 31px;
+  color: $special-green-color;
+}
+
+.left_menu_action_btn {
+  background: none;
+  color: $left_content_hover3;
+  width: 32px;
+  height: 32px;
+  border-radius: 4px;
+
+  &:hover {
+    background: $left_status_bckg;
+    color: $left_status_color;
+  }
+}
+
+.left_name_channel {
+  color: $left_content_hover3;
+}
+
+.left_voice_connected {
+  width: 150px;
+  height: 18px;
+  display: flex;
+  align-items: center;
+  margin-bottom: 2px;
+  font-weight: 700;
+}
+
+.left_name_channel {
+  width: 150px;
+  height: 13px;
+}
+
+.left_name_channel_span {
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.left_menu_adj {
+  width: 224px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  margin-top: 8px;
+  border-bottom: 1px solid red; // $left_rship_hr
+}
+
+.left_menu_rship {
+  padding: 2px 16px;
+  background: $left_rship_btn;
+  width: 108px;
+  height: 32px;
+  margin-right: 5px;
+  display: flex;
+  align-items: center;
+  color: #fff;
+  border-radius: 4px;
+}
+
+.left_menu_widget {
+  width: 20px;
+  height: 20px;
+  margin-right: 8px;
+}
+
+
