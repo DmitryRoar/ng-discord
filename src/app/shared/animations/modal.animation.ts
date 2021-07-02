@@ -6,8 +6,8 @@ import {
   trigger
 } from '@angular/animations'
 
-const timing = 205
-const height = 100
+const timing = 208
+const height = 200
 
 export const modalAnimations: AnimationTriggerMetadata =
   trigger('modal', [
@@ -16,7 +16,7 @@ export const modalAnimations: AnimationTriggerMetadata =
         height,
         transform: 'translate(-50%,-50%) scale(.2)'
       }),
-      animate(timing, style({
+      animate(`${timing}ms ease-out`, style({
         transform: '* scale(1)',
         height: '*'
       }))

@@ -1,0 +1,13 @@
+@import "../var";
+
+@mixin sub-side-wrap {
+  & {
+    width: $channel-width;
+    height: $content-height;
+    background: $dialog-bckg-color;
+
+    .content-wrap {
+      width: $content-weight;
+    }
+  }
+}

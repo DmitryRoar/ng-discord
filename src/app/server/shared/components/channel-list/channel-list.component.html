@@ -1,0 +1,18 @@
+<div class="wrap">
+  <h3>{{data.text | uppercase}}</h3>
+  <ng-container *ngFor="let channel of data.channels | channelType: data.text">
+    <a
+      *ngIf="channel.type === 'text'; else voiceChannel"
+      [routerLink]="['channel', channel.id]"
+      class="item"
+      routerLinkActive="active"
+    >
+      {{channel.name}}
+    </a>
+    <ng-template #voiceChannel>
+      <button class="item">
+        {{channel.name}}
+      </button>
+    </ng-template>
+  </ng-container>
+</div>

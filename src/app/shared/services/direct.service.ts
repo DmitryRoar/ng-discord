@@ -1,19 +1,19 @@
 import {Injectable} from '@angular/core'
 
-import {IGetAll} from '../interfaces/direct.interface'
+import {IDirect} from '../interfaces/direct.interface'
 
 @Injectable({providedIn: 'root'})
 export class DirectService {
   constructor() {
   }
 
-  getAll(): IGetAll[] {
+  getAll(): IDirect[] {
     return [
-      {name: 'Roar', avatar: 'empty', id: '1'},
-      {name: 'Roar2', avatar: 'empty', id: '2'},
-      {name: 'Roar3', avatar: 'empty', id: '3'},
-      {name: 'Roar4', avatar: 'empty', id: '243'},
-      {name: 'Roar5', avatar: 'empty', id: '5'}
+      {name: 'Roar', route: 'direct', avatar: '/assets/img/roar_white.png', id: '1'},
+      {name: 'Roar2', route: 'direct', avatar: '/assets/img/roar_white.png', id: '2'},
+      {name: 'Roar3', route: 'direct', avatar: '/assets/img/roar_white.png', id: '3'},
+      {name: 'Roar4', route: 'direct', avatar: '/assets/img/roar_white.png', id: '243'},
+      {name: 'Roar5', route: 'direct', avatar: '/assets/img/roar_white.png', id: '5'}
     ]
   }
 }

@@ -1,5 +1,7 @@
-                                              Discord Clone
-[demo](https://ng-discrd-second.web.app/) 
+#[demo](https://ng-discrd-second.web.app/) 
+
+#### [color list](COLOR-LIST.md)
+#### [class list](TYPOGRAPHY.md)
 
 ### to start a project
 ```sh

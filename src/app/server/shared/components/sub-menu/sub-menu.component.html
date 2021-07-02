@@ -1,0 +1,60 @@
+<div class="sb-wrap flex column">
+  <div class="content-header">
+    <button class="item">{{channelInfo.name}}'s server</button>
+  </div>
+
+  <div class="sb-items">
+    <app-channel-list [data]="{text: 'text', channels: channelInfo.channels}"></app-channel-list>
+    <app-channel-list [data]="{text: 'voice', channels: channelInfo.channels}"></app-channel-list>
+
+    <!--    <a-->
+    <!--      class="item flex-ct sb"-->
+    <!--      routerLinkActive="active"-->
+    <!--      *ngFor="let channel of channelInfo.channels"-->
+    <!--    >-->
+    <!--      <div class="item-info flex-ct">-->
+    <!--        <ng-container *ngIf="channel.type === 'text'; else voiceChannel">-->
+    <!--          <h1>Text</h1>-->
+    <!--          <svg-icon icon="text" size="m"></svg-icon>-->
+    <!--          <div class="item-info__name">{{channel.name}}</div>-->
+    <!--        </ng-container>-->
+    <!--        <ng-template #voiceChannel>-->
+    <!--          <h1>Voice</h1>-->
+    <!--          <svg-icon icon="voice" size="m"></svg-icon>-->
+    <!--          <span class="item-info__name">{{channel.name}}</span>-->
+    <!--        </ng-template>-->
+    <!--      </div>-->
+
+    <!--      <svg-icon icon="cross" class="item__icon" size="m"></svg-icon>-->
+    <!--    </a>-->
+  </div>
+
+  <!--    <div class="direct-item" *ngFor="let channel of channelInfo.channels">-->
+  <!--      {{channel.name}}-->
+  <!--      <a-->
+  <!--        class="direct"-->
+  <!--        [routerLink]="['channel', channel.id]"-->
+  <!--        routerLinkActive="direct__active"-->
+  <!--      >-->
+  <!--        {{channel.type}}-->
+  <!--        <span class="direct__name">{{channel.name}}</span>-->
+  <!--        <ng-container *ngIf="channel.type === 'voice'; else channelText">-->
+  <!--          <div class="voice">-->
+  <!--            voice name: {{channel.name}}-->
+  <!--          </div>-->
+  <!--        </ng-container>-->
+  <!--        <ng-template #channelText>-->
+  <!--          <div class="text">-->
+  <!--            text name: {{channel.name}}-->
+  <!--          </div>-->
+  <!--        </ng-template>-->
+  <!--        <svg class="csvg delete_msg" aria-hidden="false" width="24" height="24" viewBox="0 0 24 24">-->
+  <!--          <path fill="currentColor"-->
+  <!--                d="M18.4 4L12 10.4L5.6 4L4 5.6L10.4 12L4 18.4L5.6 20L12 13.6L18.4 20L20 18.4L13.6 12L20 5.6L18.4 4Z"></path>-->
+  <!--        </svg>-->
+  <!--      </a>-->
+  <!--    </div>-->
+  <!--  </div>-->
+
+  <app-footer></app-footer>
+</div>

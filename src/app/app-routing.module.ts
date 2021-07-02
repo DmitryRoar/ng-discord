@@ -6,12 +6,13 @@ import {MainLayoutComponent} from './shared/components/main-layout/main-layout.c
 import {ErrorPageComponent} from './error-page/error-page.component'
 import {HomePageComponent} from './home-page/home-page.component'
 import {PublicServerPageComponent} from './public-server-page/public-server-page.component'
-import {ServerPageComponent} from './server-page/server-page.component'
-import {ChannelPageComponent} from './channel-page/channel-page.component'
+import {DirectPageComponent} from './direct-page/direct-page.component'
 import {FriendsPageComponent} from './friends-page/friends-page.component'
 
-import {ServerGuard} from './shared/guards/server.guard'
+import {ServerGuard} from './server/shared/guards/server.guard'
 import {NitroPageComponent} from './nitro-page/nitro-page.component'
+import {ServerPageComponent} from './server/server-page/server-page.component'
+import {ChannelPageComponent} from './server/channel-page/channel-page.component'
 
 const routes: Routes = [
   {
@@ -22,11 +23,11 @@ const routes: Routes = [
         path: '', component: HomePageComponent, children: [
           {path: 'friends', component: FriendsPageComponent},
           {path: 'nitro', component: NitroPageComponent},
-          {path: 'channel/:id', component: ChannelPageComponent}
+          {path: 'direct/:id', component: DirectPageComponent}
         ]
       },
       {path: 'public-server', component: PublicServerPageComponent},
-      {path: 'server/:name', component: ServerPageComponent, canActivate: [ServerGuard]},
+      {path: 'server', loadChildren: () => import('./server/server.module').then(m => m.ServerModule)}
     ]
   },
   {path: 'error', component: ErrorPageComponent},
