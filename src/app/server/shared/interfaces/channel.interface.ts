@@ -13,6 +13,6 @@ export interface IChannel {
 }
 
 export interface IDataChannel {
-  text: ChannelType
+  group: ChannelType
   channels: IListChannel[]
 }

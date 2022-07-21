@@ -1,16 +1,20 @@
-<div class="wrap">
-  <h3>{{data.text | uppercase}}</h3>
-  <ng-container *ngFor="let channel of data.channels | channelType: data.text">
+<div class="flex column">
+  <h3>{{data.group | uppercase}}</h3>
+  <ng-container *ngFor="let channel of data.channels | channelType: data.group">
     <a
       *ngIf="channel.type === 'text'; else voiceChannel"
       [routerLink]="['channel', channel.id]"
       class="item"
       routerLinkActive="active"
     >
-      {{channel.name}}
+      <div class="icon">
+        <svg-icon size="m" icon="lattice"></svg-icon>
+      </div>
+      <span class="name">{{channel.name}}</span>
     </a>
     <ng-template #voiceChannel>
       <button class="item">
+        <svg-icon size="m" icon="voice"></svg-icon>
         {{channel.name}}
       </button>
     </ng-template>
