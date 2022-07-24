@@ -1,0 +1,50 @@
+// header
+$header-height: 22px;
+
+// server
+$server-transition: .2s;
+$server-width: 72px;
+
+// modal
+$modal-margin-top: 8px;
+$modal-border-color: #ebebeb;
+$modal-footer-background: #f6f6f7;
+$modal-join-btn-background: #747f8d;
+
+// dialog
+$dialog-bckg-color: #303136;
+$dialog-text: #8e9297;
+$dialog-header-bckg-color: #202225;
+$dialog-header-text-color: #72767d;
+$dialog-hover: #3b3c42;
+$dialog-special-btn: #b9bbbe;
+$dialog-hover-text: #dcddde;
+$channel-width: 240px;
+
+$left_content_hover3: #babbbe;
+$left_profile_hover: #35363c;
+$left_right_footer: #292b2f;
+$left_status_bckg: #36383d;
+$left_status_color: #dadbdc;
+$left_rship_btn: #36393f;
+
+// content
+$content-weight: calc(100vw - #{$channel-width} - #{$server-width});
+
+
+// general
+$content-height: calc(100vh - #{$header-height});
+$icon-height: 48px;
+$icon-width: 48px;
+
+$main-color: #202225;
+$logo-color: #7e82d6;
+$default-color: #37393f;
+$special-green-color: #74b683;
+$hr-color: #2e2f32;
+$desk-color: #4f5660;
+
+// footer
+$avatar-size: 50px;
+$avatar-br: 50px;
+$person-color: #fff;

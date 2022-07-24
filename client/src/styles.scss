@@ -1,0 +1,129 @@
+@import "assets/styles/index";
+@import "assets/styles/vars/color";
+
+* {
+  font-family: 'Whitney', 'HelveticaMedium', sans-serif;
+}
+
+.sb-wrap {
+  width: $channel-width;
+  height: $content-height;
+  background: $dialog-bckg-color;
+
+  :host ::ng-deep svg {
+    color: $dialog-text;
+  }
+}
+
+.sb-items {
+  flex: 1 0 auto;
+  width: calc(100% - 16px);
+  margin: 2px auto 0 auto;
+
+  .item {
+    color: $dark-primary;
+    padding: 0 8px;
+    height: 42px;
+    &.active {
+      background: $dialog-hover;
+      .item__icon {
+        display: inline-block;
+      }
+      .item-info {
+        &__name {
+          color: $snow;
+        }
+      }
+    }
+    &-info {
+      &__avatar {
+        margin-right: 12px;
+        border-radius: 50%;
+      }
+      &__name {
+        text-overflow: ellipsis;
+        overflow: hidden;
+        white-space: nowrap;
+        font-size: 15px;
+        font-weight: 500;
+      }
+    }
+    &:hover {
+      color: $snow;
+      background: $dialog-hover;
+      border-radius: 4px;
+      .item__icon {
+        display: inline-block;
+      }
+    }
+
+    &__icon, &-info__avatar {
+
+    }
+
+    &__icon {
+      display: none;
+      color: $dialog-special-btn;
+      transform: scale(.7);
+      &:hover {
+        color: $snow;
+      }
+    }
+  }
+}
+
+.content-header {
+  padding: 10px;
+  border-bottom: 1px solid $dark-modified;
+
+  .item {
+    background: none;
+    font-size: 15px;
+    color: $snow;
+    padding: 1px 6px;
+    border-radius: 4px;
+    width: 100%;
+    height: 28px;
+    text-overflow: ellipsis;
+    text-align: left;
+    overflow: hidden;
+    white-space: nowrap;
+    font-weight: 500;
+    font-family: 'Ginto', 'Whitney', sans-serif;
+    &.bckg {
+      background: $main-bg;
+      color: $segment-modified;
+      font-size: 14px;
+      font-family: 'Whitney', 'HelveticaMedium', sans-serif;
+    }
+  }
+}
+
+.flex {
+  display: flex;
+  &-ct {
+    display: flex;
+    align-items: center;
+  }
+  &-inline {
+    display: inline-flex;
+    align-items: center;
+  }
+  &, &-inline, &-ct {
+    &.column {
+      flex-direction: column;
+    }
+    &.sb {
+      justify-content: space-between;
+    }
+    &.start {
+      justify-content: flex-start;
+    }
+    &.end {
+      justify-content: flex-end;
+    }
+    &.center {
+      justify-content: center;
+    }
+  }
+}

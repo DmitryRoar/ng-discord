@@ -1,0 +1,22 @@
+<div class="flex column">
+  <h3 class="title">{{data.group | uppercase}}</h3>
+  <ng-container *ngFor="let channel of data.channels | channelType: data.group">
+    <a
+      *ngIf="channel.type === 'text'; else voiceChannel"
+      [routerLink]="['channel', channel.id]"
+      class="item flex-ct"
+      routerLinkActive="active"
+    >
+      <div class="icon">
+        <svg-icon size="m" icon="lattice"></svg-icon>
+      </div>
+      <span class="name">{{channel.name}}</span>
+    </a>
+    <ng-template #voiceChannel>
+      <button class="item flex-ct">
+        <svg-icon size="m" icon="voice"></svg-icon>
+        {{channel.name}}
+      </button>
+    </ng-template>
+  </ng-container>
+</div>

@@ -1,0 +1,48 @@
+<div class="sb-wrap flex column">
+  <div class="content-header flex center">
+    <button class="item bckg">Find or start a conversation</button>
+  </div>
+
+  <div class="mode-wrap">
+    <div class="mode">
+      <a
+        class="mode-content flex"
+        *ngFor="let mode of modes"
+        routerLinkActive="active"
+        [routerLink]="mode.path"
+      >
+        <div class="flex-ct">
+        <svg-icon [icon]="mode.icon" size="m"></svg-icon>
+        <span>{{mode.name}}</span>
+        </div>
+      </a>
+    </div>
+  </div>
+
+  <div class="direct-header">
+    <span class="direct-header__headline">direct message</span>
+    <svg x="0" y="0" aria-hidden="false" width="24" height="24" viewBox="0 0 18 18">
+      <polygon fill-rule="nonzero" fill="currentColor"
+               points="15 10 10 10 10 15 8 15 8 10 3 10 3 8 8 8 8 3 10 3 10 8 15 8"></polygon>
+    </svg>
+  </div>
+
+  <div class="sb-items">
+    <div class="direct-item" *ngFor="let item of directs">
+      <a
+        class="direct"
+        [routerLink]="['/direct', item.id]"
+          routerLinkActive="active"
+      >
+        <div class="direct-info">
+          <app-avatar [src]="item.avatar" size="xxs" class="direct-info__avatar"></app-avatar>
+          <span class="direct-info__name">{{item.name}}</span>
+        </div>
+
+        <svg-icon icon="cross" class="direct__icon" size="m"></svg-icon>
+      </a>
+    </div>
+  </div>
+
+  <app-footer></app-footer>
+</div>

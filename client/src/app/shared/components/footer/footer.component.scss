@@ -1,0 +1,133 @@
+@import "src/assets/styles/var";
+@import "src/assets/styles/vars/color";
+
+.footer {
+  background: $dark-accent-modified;
+  width: 240px;
+  flex: 0 0 auto;
+}
+
+.connect-wrap {
+  height: 89px;
+  padding: 8px;
+}
+
+.connect-container {
+  height: 32px;
+  width: 224px;
+  display: flex;
+  align-items: center;
+}
+
+.connect {
+  width: 150px;
+  height: 31px;
+  color: $good;
+
+  &__span {
+    text-transform: capitalize;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  &__status-ok {
+    width: 16px;
+    height: 16px;
+    margin-right: 5px;
+  }
+
+  &__voice {
+    width: 150px;
+    height: 18px;
+    display: flex;
+    align-items: center;
+    margin-bottom: 2px;
+    font-weight: 700;
+  }
+
+  &__name-channel {
+    width: 150px;
+    height: 13px;
+    color: $left_content_hover3; // CHANGE
+
+    &__span {
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+
+  &__action-btn {
+    background: none;
+    color: $left_content_hover3; // CHANGE
+    width: 32px;
+    height: 32px;
+    border-radius: 4px;
+
+    &:hover {
+      background: $left_status_bckg;
+      color: $left_status_color;
+    }
+  }
+}
+
+.capabilities {
+  width: 224px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  margin-top: 8px;
+  //border-bottom: 1px solid red; // $left_rship_hr
+
+  &__item {
+    padding: 2px 16px;
+    background: $left_rship_btn;
+    width: 108px;
+    height: 32px;
+    margin-right: 5px;
+    display: flex;
+    align-items: center;
+    color: #fff;
+    border-radius: 4px;
+  }
+
+  &__icon {
+    width: 20px;
+    height: 20px;
+    margin-right: 8px;
+  }
+}
+
+.person {
+  height: 52px;
+  display: flex;
+  color: $snow;
+  align-items: center;
+  justify-content: space-between;
+
+  .avatar {
+    border-radius: $avatar-br;
+    width: $avatar-size;
+    img {
+      width: $avatar-size;
+    }
+  }
+
+  &__buttons {
+    display: flex;
+    button {
+      background: none;
+    }
+  }
+}
+
+.hr {
+  width: 100%;
+  height: 1px;
+  background: $left_rship_btn;
+}
