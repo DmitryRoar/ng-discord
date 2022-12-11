@@ -3,16 +3,13 @@ import {PreloadAllModules, RouterModule, Routes} from '@angular/router'
 
 import {MainLayoutComponent} from './shared/components/main-layout/main-layout.component'
 
+import {DirectPageComponent} from './direct-page/direct-page.component'
 import {ErrorPageComponent} from './error-page/error-page.component'
+import {FriendsPageComponent} from './friends-page/friends-page.component'
 import {HomePageComponent} from './home-page/home-page.component'
 import {PublicServerPageComponent} from './public-server-page/public-server-page.component'
-import {DirectPageComponent} from './direct-page/direct-page.component'
-import {FriendsPageComponent} from './friends-page/friends-page.component'
 
-import {ServerGuard} from './server/shared/guards/server.guard'
 import {NitroPageComponent} from './nitro-page/nitro-page.component'
-import {ServerPageComponent} from './server/server-page/server-page.component'
-import {ChannelPageComponent} from './server/channel-page/channel-page.component'
 
 const routes: Routes = [
   {
@@ -20,25 +17,37 @@ const routes: Routes = [
     component: MainLayoutComponent,
     children: [
       {
-        path: '', component: HomePageComponent, children: [
+        path: '',
+        component: HomePageComponent,
+        children: [
           {path: 'friends', component: FriendsPageComponent},
           {path: 'nitro', component: NitroPageComponent},
-          {path: 'direct/:id', component: DirectPageComponent}
-        ]
+          {path: 'direct/:id', component: DirectPageComponent},
+        ],
       },
       {path: 'public-server', component: PublicServerPageComponent},
-      {path: 'server', loadChildren: () => import('./server/server.module').then(m => m.ServerModule)}
-    ]
+      {
+        path: 'channels',
+        loadChildren: () =>
+          import('./server/server.module').then(m => m.ServerModule),
+      },
+      {
+        path: 'auth',
+        loadChildren: () =>
+          import('./auth/auth.module').then(m => m.AuthModule),
+      },
+    ],
   },
   {path: 'error', component: ErrorPageComponent},
-  {path: '**', redirectTo: 'error'}
+  {path: '**', redirectTo: 'error'},
 ]
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes, {
-    preloadingStrategy: PreloadAllModules
-  })],
-  exports: [RouterModule]
+  imports: [
+    RouterModule.forRoot(routes, {
+      preloadingStrategy: PreloadAllModules,
+    }),
+  ],
+  exports: [RouterModule],
 })
-export class AppRoutingModule {
-}
+export class AppRoutingModule {}

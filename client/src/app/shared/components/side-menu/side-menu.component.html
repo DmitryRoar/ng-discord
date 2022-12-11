@@ -20,16 +20,16 @@
   <div class="menu">
     <a
       routerLinkActive="active default"
-      [routerLink]="['/server', server.id]"
+      [routerLink]="['/channels', server.id]"
       *ngFor="let server of servers"
     >
-      <div class="server" [class.server-text]="server.text">
+      <div class="server" [class.server-text]="server.name">
         <div class="server__border"></div>
-        <ng-container *ngIf="server.text; else img">
-          <p>{{server.text}}</p>
+        <ng-container *ngIf="!server.icon; else img">
+          <p class="server__name">{{server.name}}</p>
         </ng-container>
         <ng-template #img>
-          <app-avatar [src]="server.icon"></app-avatar>
+          <app-avatar [src]="server.icon" size="s"></app-avatar>
         </ng-template>
       </div>
     </a>

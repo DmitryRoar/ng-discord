@@ -2,6 +2,7 @@
   <div class="content-header">
     <button class="item">{{channelInfo.name}}'s server</button>
   </div>
+  
   <div class="sb-items">
     <app-channel-list [data]="{group: 'text', channels: channelInfo.channels}"></app-channel-list>
     <app-channel-list [data]="{group: 'voice', channels: channelInfo.channels}"></app-channel-list>

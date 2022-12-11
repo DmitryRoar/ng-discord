@@ -1,0 +1,17 @@
+<div class="wrap">
+  <div class="tooltips content" #tooltips>
+    <ng-content select="[tooltips]"></ng-content>
+
+    <span class="inactive" *ngIf="!tooltips.children.length">tooltips</span>
+  </div>
+
+  <div class="textarea">
+    <textarea [placeholder]="placeholder" rows="1" #textarea></textarea>
+  </div>
+
+  <div class="actions content" #actions>
+    <ng-content select="[actions]"></ng-content>
+
+    <span class="inactive" *ngIf="!actions.children.length">actions</span>
+  </div>
+</div>

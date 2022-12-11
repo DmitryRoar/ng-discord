@@ -3,7 +3,7 @@
   <ng-container *ngFor="let channel of data.channels | channelType: data.group">
     <a
       *ngIf="channel.type === 'text'; else voiceChannel"
-      [routerLink]="['channel', channel.id]"
+      [routerLink]="channel.id"
       class="item flex-ct"
       routerLinkActive="active"
     >

@@ -1,7 +1,7 @@
 export interface IServer {
   path: string
-  text?: string
-  icon?: string
+  name: string
+  icon: string
   id: string
-  special: boolean
+  autoFocusId?: string
 }

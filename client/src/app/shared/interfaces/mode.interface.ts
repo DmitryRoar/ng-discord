@@ -1,4 +1,4 @@
-import {IconNameType} from '../images/svg-icon/icon-name.type'
+import { IconNameType } from "../ui/images/svg-icon/icon-name.type"
 
 export interface IMode {
   icon: IconNameType

@@ -1,0 +1,39 @@
+@import "../../../../assets/styles/vars/color";
+
+$pd-horizontal: 16px;
+$br: 8px;
+$text-size: 1rem;
+
+::ng-deep {
+  .left {
+    color: red
+  }
+}
+
+.wrap {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding: 10px $pd-horizontal;
+  background: green;
+  border-radius: $br;
+  font-size: $text-size;
+}
+
+.tooltips {
+  padding-right: $pd-horizontal;
+}
+
+.textarea {
+  width: 100%;
+  flex: 1;
+
+  textarea {
+    width: 100%;
+    background: none;
+    color: $snow;
+    resize: none;
+    font-size: $text-size;
+  }
+}
+

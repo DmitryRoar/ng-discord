@@ -1,34 +1,40 @@
 import {Injectable} from '@angular/core'
 
-import {IServer} from '../interfaces/server.interface'
 import {HttpClient} from '@angular/common/http'
 import {Observable} from 'rxjs'
 import {environment} from '../../../../environments/environment'
+import {IServer} from '../interfaces/server.interface'
 
 @Injectable({providedIn: 'root'})
 export class ServerService {
   serverGetIcon = '/assets/img/roar_white.png'
 
-  constructor(
-    private http: HttpClient
-  ) {
-  }
+  constructor(private http: HttpClient) {}
 
   getAll(): IServer[] {
     // mock
     return [
-      {path: 'server/main', icon: this.serverGetIcon, special: false, id: '1'},
-      {path: 'server/test', text: 'Барыга', special: false, id: '2'},
-      {path: 'server/discord', icon: this.serverGetIcon, special: false, id: '3'},
-      {path: 'server/admin', icon: this.serverGetIcon, special: false, id: '4'},
-      {path: 'server/test-discord', icon: this.serverGetIcon, special: true, id: '5'},
-      {path: 'server/angular-clone', icon: this.serverGetIcon, special: true, id: '6'},
-      {path: 'server/discord-clone', icon: this.serverGetIcon, special: true, id: '7'},
-      {path: 'server/hello-word-server', icon: this.serverGetIcon, special: true, id: '8'}
+      {path: 'main', icon: this.serverGetIcon, name: 'Test', id: '1'},
+      {path: 'test', name: 'Барыга', icon: null, id: '2'},
+      {path: 'discord', icon: this.serverGetIcon, name: 'Test2', id: '3'},
+      {path: 'admin', icon: this.serverGetIcon, name: 'Test3', id: '4'},
+      {path: 'test-discord', icon: this.serverGetIcon, name: 'Test4', id: '5'},
+      {path: 'angular-clone', icon: null, name: 'Test532323', id: '6'},
+      {path: 'discord-clone', icon: this.serverGetIcon, name: 'Test6', id: '7'},
+      {
+        path: 'hello-word-server',
+        icon: this.serverGetIcon,
+        name: 'Test7',
+        id: '8',
+      },
     ]
   }
 
   createServer(server): Observable<any> {
     return this.http.post(`${environment.fbDbUrl}/servers.json`, server)
+  }
+
+  getById(): any {
+    return 'get by id'
   }
 }

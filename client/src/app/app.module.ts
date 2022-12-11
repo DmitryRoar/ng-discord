@@ -1,23 +1,23 @@
-import {BrowserModule} from '@angular/platform-browser'
 import {CUSTOM_ELEMENTS_SCHEMA, NgModule} from '@angular/core'
 import {FormsModule, ReactiveFormsModule} from '@angular/forms'
+import {BrowserModule} from '@angular/platform-browser'
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations'
 import {AppRoutingModule} from './app-routing.module'
 
 import {SharedModule} from './shared/shared.module'
 
 import {AppComponent} from './app.component'
-import {MainLayoutComponent} from './shared/components/main-layout/main-layout.component'
-import {HeaderComponent} from './shared/components/header/header.component'
+import {DirectPageComponent} from './direct-page/direct-page.component'
 import {ErrorPageComponent} from './error-page/error-page.component'
-import {SideMenuComponent} from './shared/components/side-menu/side-menu.component'
+import {FriendsPageComponent} from './friends-page/friends-page.component'
 import {HomePageComponent} from './home-page/home-page.component'
+import {NitroPageComponent} from './nitro-page/nitro-page.component'
 import {PublicServerPageComponent} from './public-server-page/public-server-page.component'
 import {CreateServerComponent} from './shared/components/create-server/create-server.component'
-import {FriendsPageComponent} from './friends-page/friends-page.component'
-import {NitroPageComponent} from './nitro-page/nitro-page.component'
+import {HeaderComponent} from './shared/components/header/header.component'
+import {MainLayoutComponent} from './shared/components/main-layout/main-layout.component'
+import {SideMenuComponent} from './shared/components/side-menu/side-menu.component'
 import {SubMenuComponent} from './shared/components/sub-menu/sub-menu.component'
-import {DirectPageComponent} from './direct-page/direct-page.component'
 
 @NgModule({
   declarations: [
@@ -32,7 +32,7 @@ import {DirectPageComponent} from './direct-page/direct-page.component'
     FriendsPageComponent,
     NitroPageComponent,
     SubMenuComponent,
-    DirectPageComponent
+    DirectPageComponent,
   ],
   imports: [
     BrowserModule,
@@ -40,11 +40,10 @@ import {DirectPageComponent} from './direct-page/direct-page.component'
     SharedModule,
     ReactiveFormsModule,
     FormsModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
   ],
   providers: [],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule {
-}
+export class AppModule {}

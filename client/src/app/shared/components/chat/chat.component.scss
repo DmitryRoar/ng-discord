@@ -1,0 +1,39 @@
+@import "../../../../assets/styles/vars/color";
+
+$action-pd: 4px; 
+$up-footer: 24px;
+
+.container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  color: $snow;
+}
+
+.content {
+  flex: 1;
+}
+
+.message {
+}
+
+.tooltips {
+  height: 24px;
+  button {
+    height: inherit;
+  }
+}
+
+.actions {
+  & > * {
+    padding: $action-pd;
+    margin: 0 $action-pd;
+    &:last-of-type {
+      margin-right: 0;
+    }
+  }
+}
+
+.footer {
+  margin-bottom: $up-footer;
+}

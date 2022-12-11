@@ -1,0 +1,49 @@
+<div class="container">
+  <div class="content-header">
+    <button class="item">вфы</button>
+  </div>
+
+
+  <div class="content">
+    <div class="message flex" *ngFor="let messageData of messages$ | async">
+      <div class="avatar">
+        <app-avatar [src]="messageData.profile.avatar"></app-avatar>
+      </div>
+      <div class="info">
+        <div class="username">
+          {{messageData.profile.username}}
+          <div class="tag bot" *ngIf="isBot(messageData.roles)">BOT</div>
+        </div>
+        <div class="index" *ngFor="let msg of messageData.data">
+          {{msg.msg}}
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+  <div class="footer">
+    <rg-textarea placeholder="Message @{{channelName}}">
+      <div tooltips class="tooltips">
+        <button class="btn default">
+          <svg-icon icon="plus-corner-fill" [size]="iconSize"></svg-icon>
+        </button>
+      </div>
+      <div actions class="flex-ct sb actions">
+        <button class="btn default">
+          <svg-icon icon="gift" [size]="iconSize"></svg-icon>
+        </button>
+        <button class="btn default">
+          <svg-icon icon="gif" [size]="iconSize"></svg-icon>
+        </button>
+        <button class="btn default">
+          <svg-icon icon="smile-sticker" [size]="iconSize"></svg-icon>
+        </button>
+        <button class="btn" #emoji>
+          emoju
+        </button>
+      </div>
+    </rg-textarea>
+  </div>
+</div>

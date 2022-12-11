@@ -5,8 +5,12 @@
   font-family: 'Whitney', 'HelveticaMedium', sans-serif;
 }
 
+body {
+  background: $main-bg-modified;
+}
+
 .sb-wrap {
-  width: $channel-width;
+  // width: $channel-width;
   height: $content-height;
   background: $dialog-bckg-color;
 
@@ -125,5 +129,43 @@
     &.center {
       justify-content: center;
     }
+  }
+}
+
+span.inactive {
+  color: $dark-accent-modified;
+  cursor: not-allowed;
+} 
+
+.btn {
+  background: none;
+  &.default {
+    svg {
+      color: red;
+    }
+  }
+}
+
+.avatar {
+  display: inline-block;
+
+  &, img {
+    border-radius: 50%;
+  }
+
+  img {
+    object-fit: contain;
+  }
+}
+
+.tag {
+  display: inline-block;
+  
+  &.bot {
+    text-transform: uppercase;
+    background: $primary;
+    border-radius: 11px;
+    padding: .1rem .275rem;
+    font-size: .625rem;
   }
 }

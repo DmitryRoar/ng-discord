@@ -12,7 +12,7 @@ const routes: Routes = [
   {path: '', redirectTo: '/', pathMatch: 'full'},
   {
     path: ':id', component: ServerPageComponent, resolve: {channel: ChannelResolver}, canActivate: [ServerGuard], children: [
-      {path: 'channel/:id', component: ChannelPageComponent}
+      {path: ':id', component: ChannelPageComponent}
     ]
   }
 ]

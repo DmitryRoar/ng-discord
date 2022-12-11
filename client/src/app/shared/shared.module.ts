@@ -1,29 +1,24 @@
-import {NgModule} from '@angular/core'
+import {CommonModule} from '@angular/common'
 import {HttpClientModule} from '@angular/common/http'
+import {NgModule} from '@angular/core'
 import {RouterModule} from '@angular/router'
 
-import {ImagesModule} from './images/images.module'
+import {UiModule} from './ui/ui.module'
 
 import {RefDirective} from './directives/ref.directive'
 
+import {ChatComponent} from './components/chat/chat.component'
 import {FooterComponent} from './components/footer/footer.component'
 
 @NgModule({
-  declarations: [
-    FooterComponent,
-    RefDirective
-  ],
-  imports: [
-    HttpClientModule,
-    ImagesModule,
-    RouterModule
-  ],
+  declarations: [FooterComponent, RefDirective, ChatComponent],
+  imports: [CommonModule, HttpClientModule, RouterModule, UiModule],
   exports: [
     HttpClientModule,
-    ImagesModule,
     FooterComponent,
-    RefDirective
-  ]
+    RefDirective,
+    ChatComponent,
+    UiModule,
+  ],
 })
-export class SharedModule {
-}
+export class SharedModule {}

@@ -57,6 +57,11 @@
     display: none;
   }
 
+  &__name {
+    white-space: nowrap;
+    overflow: hidden;
+  }
+
   &:hover {
     border-radius: 15px;
 
